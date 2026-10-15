@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CryptoDCA Pro | Smart Crypto Investment Calculator</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app-container">
+    <header class="header">
+      <div class="logo">
+        <span class="logo-icon">⚡</span>
+        <h1>CryptoDCA <span>Pro</span></h1>
+      </div>
+      <p class="tagline">Smart Dollar-Cost Averaging & Profit Target Calculator</p>
+    </header>
+
+    <main class="grid-layout">
+      <!-- Left Column: DCA Entries -->
+      <section class="card">
+        <div class="card-header">
+          <h2>1. DCA Buy Entries</h2>
+          <button id="add-row-btn" class="btn-sm">+ Add Buy Order</button>
+        </div>
+        <p class="section-desc">Enter purchase prices and quantities to calculate weighted average cost.</p>
+        
+        <div class="table-responsive">
+          <table class="dca-table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Buy Price ($)</th>
+                <th>Amount (Coins)</th>
+                <th>Total Spent ($)</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="entries-body">
+              <!-- Dynamically populated via JS -->
+            </tbody>
+          </table>
+        </div>
+
+        <div class="fee-setting">
+          <label for="trading-fee">Exchange Fee (% per trade):</label>
+          <input type="number" id="trading-fee" value="0.1" step="0.01" min="0">
+        </div>
+      </section>
+
+      <!-- Right Column: Results & Exit Target -->
+      <section class="card">
+        <h2>2. DCA Summary</h2>
+        <div class="stats-grid">
+          <div class="stat-box">
+            <span class="stat-label">Total Coins</span>
+            <span class="stat-value" id="summary-coins">0.0000</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-label">Total Invested</span>
+            <span class="stat-value" id="summary-invested">$0.00</span>
+          </div>
+          <div class="stat-box highlight">
+            <span class="stat-label">Average Buy Price</span>
+            <span class="stat-value" id="summary-avg">$0.00</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-label">Est. Buy Fees Paid</span>
+            <span class="stat-value" id="summary-fees">$0.00</span>
+          </div>
+        </div>
+
+        <hr class="divider">
+
+        <h2>3. Target Exit & Profit Planner</h2>
+        <div class="form-group">
+          <label for="target-exit-price">Target Selling Price ($):</label>
+          <input type="number" id="target-exit-price" placeholder="e.g. 75000" step="any">
+        </div>
+
+        <div class="profit-card" id="profit-card">
+          <div class="profit-row">
+            <span>Gross Revenue:</span>
+            <strong id="profit-gross">$0.00</strong>
+          </div>
+          <div class="profit-row">
+            <span>Selling Fee:</span>
+            <strong id="profit-sell-fee">$0.00</strong>
+          </div>
+          <div class="profit-row total-row">
+            <span>Net Profit / Loss:</span>
+            <strong id="profit-net">$0.00</strong>
+          </div>
+          <div class="profit-row">
+            <span>Net Return (ROI):</span>
+            <strong id="profit-roi">0.00%</strong>
+          </div>
+        </div>
+
+        <div class="action-buttons">
+          <button id="reset-btn" class="btn-secondary">Reset Data</button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>CryptoDCA Pro • Open Source Financial Utility • Ready for GitHub Pages</p>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
