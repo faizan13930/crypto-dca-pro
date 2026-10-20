@@ -6,7 +6,7 @@ Live Demo ready for **GitHub Pages**.
 
 ---
 
-## 🚀 Features
+# 🚀 Features
 
 - **DCA Calculator:** Add multiple purchase entries (price & amount/quantity) to calculate exact weighted average buy price and total investment.
 - **Profit & Target Exit Planner:** Calculate expected ROI (%), total payout, and net profit based on target exit prices.
