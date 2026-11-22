@@ -17,7 +17,7 @@ Live Demo ready for **GitHub Pages**.
 
 ---
 
-## 📁 Project Structure
+# 📁 Project Structure
 
 ```text
 crypto-dca-pro/
